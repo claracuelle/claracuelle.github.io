@@ -1,0 +1,58 @@
+---
+import Logo from '../../public/logo.svg';
+import Menu from '../../public/icons/menu.svg';
+import Close from '../../public/icons/close.svg';
+import { Image } from 'astro:assets';
+---
+
+<header
+  class='sticky top-0 left-0 w-full z-50 grid grid-cols-2 items-center py-3 px-5 lg:px-16'
+>
+  <a class='flex justify-center items-center w-max' href='/'>
+    <Image class='w-8 h-8 object-contain' src={Logo} alt='Logo Clara Cuelle' />
+  </a>
+  <nav
+    id='menu'
+    class='fixed top-[56px] left-0 bottom-0 right-0 transition-transform duration-300 ease-in-out translate-x-full [&.active]:translate-x-0 lg:relative lg:!translate-x-0'
+  >
+    <ul
+      class='flex flex-col lg:flex-row justify-center lg:justify-between items-center h-full gap-6'
+    >
+      <li>
+        <a href='/about'>À propos</a>
+      </li>
+      <li>
+        <a href='/projects'>Mes réalisations</a>
+      </li>
+      <li>
+        <a href='/about'>clara.cuelle@gmail.com</a>
+      </li>
+    </ul>
+  </nav>
+  <button
+    id='menu-button'
+    class='flex justify-center items-center w-max justify-self-end lg:hidden [&.active_.open-icon]:hidden [&.active_.close-icon]:block'
+    type='button'
+  >
+    <Image
+      class='open-icon w-8 h-5 object-contain'
+      src={Menu}
+      alt='Open menu'
+    />
+    <Image
+      class='close-icon w-8 h-5 object-contain hidden'
+      src={Close}
+      alt='Close menu'
+    />
+  </button>
+</header>
+
+<script>
+  const $menuButton = document.getElementById('menu-button');
+  const $menu = document.getElementById('menu');
+
+  $menuButton?.addEventListener('click', () => {
+    $menuButton.classList.toggle('active');
+    $menu?.classList.toggle('active');
+  });
+</script>

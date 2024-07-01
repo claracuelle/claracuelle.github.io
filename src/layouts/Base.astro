@@ -1,0 +1,49 @@
+---
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
+  Astro.props as Props;
+---
+
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='./logo.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <style is:global>
+      @font-face {
+        font-family: 'Migra-Extrabold';
+        src: url('/fonts/Migra-Extrabold.woff') format('woff2');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Manrope-Regular';
+        src: url('/fonts/Manrope-Regular.woff') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      *,
+      *::before,
+      *::after {
+        @apply font-manrope;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
