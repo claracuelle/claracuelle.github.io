@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+
+import Base from '../../layouts/Base.astro';
+import Project from '../../components/Projects.astro';
+
+const allProjects = await getCollection('projects');
+---
+
+<Base title='Clara Cuelle - Directrice artistique | Webdesigner - Projects'>
+  {allProjects.map((project) => <Project title={project.data.title} />)}
+</Base>

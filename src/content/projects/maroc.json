@@ -1,0 +1,13 @@
+{
+  "date": "2021-07-01",
+  "title": "Maroc",
+  "description": "J'ai vécu 12 ans à Rabat, découvrant une culture, des gens, et des paysages riches en histoire et en couleurs. À travers mes photos, j'espère vous faire ressentir le même voyage que celui que je vis à travers ce pays !",
+  "type": "Projet personnel",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/maroc/hero.png",
+      "alt": ""
+    }
+  },
+  "tags": ["Photographie"]
+}

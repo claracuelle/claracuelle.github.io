@@ -1,0 +1,13 @@
+{
+  "date": "2021-06-01",
+  "title": "AGWEB Communication",
+  "description": "AGWEB Communication est une agence spécialisée dans la création de sites web et la stratégie digitale. Elle offre des services de développement, de design, et de marketing en ligne pour optimiser la présence numérique des entreprises.",
+  "link": "https://www.agweb-communication.com/#accueil",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/agweb-communication/hero.png",
+      "alt": ""
+    }
+  },
+  "tags": ["Webdesign", "UX/UI", "Rebranding"]
+}

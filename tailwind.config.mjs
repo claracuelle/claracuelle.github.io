@@ -14,6 +14,9 @@ export default {
           pressed: '#424242',
           disabled: '#B0B0B0',
         },
+        white: {
+          DEFAULT: '#FDFDFD',
+        },
         'expo-primary': {
           DEFAULT: '#0085FF',
           hover: '#3EA2FF',

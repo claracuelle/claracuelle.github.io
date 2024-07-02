@@ -1,0 +1,12 @@
+{
+  "date": "2021-08-01",
+  "title": "Welcome Lead",
+  "description": "Réalisation du site vitrine et du back office de Welcome Lead. Il s’agit d’une plateforme française de mise en relation pour projets marketing, qui assure qualité et fluidité. Elle réunit experts digitaux, avec  notation et vérification pour collaborations sûres. Gratuit, mais avec des options payantes afin d’avoir accès à des fonctionnalités supplémentaires.",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/welcome-lead/hero.png",
+      "alt": ""
+    }
+  },
+  "tags": ["Webdesign", "UX/UI"]
+}

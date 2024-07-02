@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+
+import { Image } from 'astro:assets';
+
+interface Props {
+  overtitle?: string;
+  title?: string;
+  subtitle?: string;
+  links?: Array<{ href: string; label: string }>;
+  projects?: Array<string>;
+}
+
+const {
+  overtitle = 'Portfolio',
+  title = 'Clara Cuelle',
+  subtitle = 'Directrice artistique digital et web designer à Paris',
+  links = [
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/clara-cuelle-3a466b122/',
+    },
+    { label: 'Instagram', href: 'https://www.instagram.com/claracuelle/' },
+  ],
+  projects,
+} = Astro.props;
+
+const allProjects = await getCollection('projects');
+const projectsToShow = projects?.map((project) =>
+  allProjects.find((_project) => _project.id === project)
+);
+---
+
+<section
+  class='min-h-[75dvh] text-expo-primary overflow-hidden pb-[var(--bottom-spacing-mobile)] lg:pb-[var(--bottom-spacing-desktop)]'
+  style='--left-pos-mobile: calc(((100% + 6rem) - 100%) / 2);--left-pos-desktop: calc(((100% + (6rem * 3)) - 100%) / 2);--bottom-spacing-mobile: calc(50% * (90 / 300));--bottom-spacing-desktop: calc(25% * (90 / 300));'
+>
+  <div
+    class='relative grid gap-16 grid-rows-[auto_1fr_auto] bg-expo-secondary w-full'
+  >
+    <div
+      class='absolute top-0 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] flex gap-24 w-full'
+    >
+      {
+        projectsToShow?.slice(0, 4).map((project, index) => {
+          if (project && project.data.images.hero) {
+            const image = project.data.images.hero.src;
+            const alt = project.data.images.hero.alt;
+            return (
+              <Image
+                class={`w-1/2 lg:w-1/4 aspect-[300/180] ${index > 1 ? 'hidden lg:block' : ''}`}
+                src={image}
+                alt={alt}
+                width={300}
+                height={180}
+              />
+            );
+          }
+        })
+      }
+    </div>
+    <div class='aspect-[300/180] w-1/2 lg:w-1/4'></div>
+    <div
+      class='flex flex-col justify-center items-center text-center w-full px-8 lg:px-16'
+    >
+      <h3 class='uppercase font-medium'>{overtitle}</h3>
+      <h1 class='uppercase font-migra text-7xl lg:text-9xl'>{title}</h1>
+      <h2 class='uppercase font-medium text-lg lg:text-2xl'>{subtitle}</h2>
+      <div class='flex flex-col gap-3 items-end w-full'>
+        {
+          links?.map((link) => (
+            <a class='text-black' href={link.href}>
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class='aspect-[300/90] w-1/2 lg:w-1/4'></div>
+    <div
+      class='absolute bottom-0 translate-y-1/2 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] flex gap-24 w-full'
+    >
+      {
+        projectsToShow?.slice(0, 4).map((project, index) => {
+          if (project) {
+            const image = project.data.images.hero.src;
+            const alt = project.data.images.hero.alt;
+            return (
+              <Image
+                class={`w-1/2 lg:w-1/4 aspect-[300/180] ${index > 1 ? 'hidden lg:block' : ''}`}
+                src={image}
+                alt={alt}
+                width={300}
+                height={180}
+              />
+            );
+          }
+        })
+      }
+    </div>
+  </div>
+</section>
