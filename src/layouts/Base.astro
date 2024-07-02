@@ -38,11 +38,16 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
       *::after {
         @apply font-manrope;
       }
+
+      body {
+        @apply min-h-[100dvh] grid grid-rows-[auto_1fr_auto];
+      }
     </style>
   </head>
   <body>
     <Header />
     <main>
+      {import.meta.env.DEV}
       <slot />
     </main>
   </body>
