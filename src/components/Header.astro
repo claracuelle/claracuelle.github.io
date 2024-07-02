@@ -2,18 +2,25 @@
 import Logo from '../../public/logo.svg';
 import Menu from '../../public/icons/menu.svg';
 import Close from '../../public/icons/close.svg';
+import Copy from '../../public/icons/copy.svg';
+import Check from '../../public/icons/check.svg';
 import { Image } from 'astro:assets';
 ---
 
 <header
-  class='sticky top-0 left-0 w-full z-50 grid grid-cols-2 items-center py-3 px-5 lg:px-16'
+  class='sticky top-0 left-0 w-full z-50 grid grid-cols-2 items-center py-3 px-5 lg:px-16 border-b border-expo-primary'
 >
   <a class='flex justify-center items-center w-max' href='/'>
-    <Image class='w-8 h-8 object-contain' src={Logo} alt='Logo Clara Cuelle' />
+    <Image
+      loading='eager'
+      class='w-8 h-8 object-contain'
+      src={Logo}
+      alt='Logo Clara Cuelle'
+    />
   </a>
   <nav
     id='menu'
-    class='fixed top-[56px] left-0 bottom-0 right-0 transition-transform duration-300 ease-in-out translate-x-full [&.active]:translate-x-0 lg:relative lg:!translate-x-0'
+    class='fixed top-[56px] left-0 bottom-0 right-0 lg:top-auto lg:left-auto lg:bottom-auto lg:right-auto transition-transform duration-300 ease-in-out translate-x-full [&.active]:translate-x-0 lg:relative lg:!translate-x-0'
   >
     <ul
       class='flex flex-col lg:flex-row justify-center lg:justify-between items-center h-full gap-6'
@@ -25,7 +32,26 @@ import { Image } from 'astro:assets';
         <a href='/projects'>Mes réalisations</a>
       </li>
       <li>
-        <a href='/about'>clara.cuelle@gmail.com</a>
+        <button
+          id='copy-mail'
+          type='button'
+          class='flex justify-center items-center gap-2 [&.active_.copy]:hidden [&.active_.check]:block'
+        >
+          <Image
+            loading='eager'
+            class='copy w-8 h-5 object-contain'
+            src={Copy}
+            alt='Copy'
+          />
+          <Image
+            loading='eager'
+            class='check w-4 h-4 object-contain hidden'
+            src={Check}
+            alt='Is copied'
+          />
+          <span class='copy'>clara.cuelle@gmail.com</span>
+          <span class='check hidden'>copié</span>
+        </button>
       </li>
     </ul>
   </nav>
@@ -35,11 +61,13 @@ import { Image } from 'astro:assets';
     type='button'
   >
     <Image
+      loading='eager'
       class='open-icon w-8 h-5 object-contain'
       src={Menu}
       alt='Open menu'
     />
     <Image
+      loading='eager'
       class='close-icon w-8 h-5 object-contain hidden'
       src={Close}
       alt='Close menu'
@@ -54,5 +82,19 @@ import { Image } from 'astro:assets';
   $menuButton?.addEventListener('click', () => {
     $menuButton.classList.toggle('active');
     $menu?.classList.toggle('active');
+  });
+
+  const $copyMail = document.getElementById('copy-mail');
+
+  $copyMail?.addEventListener('click', () => {
+    if ($copyMail.textContent) {
+      $copyMail.setAttribute('disabled', '');
+      navigator.clipboard.writeText($copyMail.textContent);
+      $copyMail.classList.add('active');
+      setTimeout(() => {
+        $copyMail.classList.remove('active');
+        $copyMail.removeAttribute('disabled');
+      }, 1500);
+    }
   });
 </script>
