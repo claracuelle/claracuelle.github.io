@@ -17,13 +17,13 @@ import Icon from '../components/Icon.svelte';
     >
       <li>
         <a
-          class={`decoration-expo-primary hover:underline [&.active]:underline ${Astro.url.pathname.includes('/about') ? 'active' : ''}`}
+          class={`[&.active]:text-expo-primary hover:text-expo-primary [&.active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/about') ? 'active' : ''}`}
           href='/portfolio/about'>À propos</a
         >
       </li>
       <li>
         <a
-          class={`decoration-expo-primary hover:underline [&.active]:underline ${Astro.url.pathname.includes('/projects') ? 'active' : ''}`}
+          class={`[&.active]:text-expo-primary hover:text-expo-primary [&.active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/projects') ? 'active' : ''}`}
           href='/portfolio/projects'>Mes réalisations</a
         >
       </li>

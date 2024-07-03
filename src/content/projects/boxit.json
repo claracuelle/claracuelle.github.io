@@ -3,9 +3,10 @@
   "title": "BOXIT",
   "description": "Lors de notre briefing, notre objectif était de concevoir une expérience globale pour la marque Basic Fit en intégrant la restauration dans ses clubs. Ainsi, nous avons créé Boxit, une marque de nourriture dédiée aux sportifs. Avec son propre branding, Boxit propose des box saines et pratiques à emporter, sous forme de bento, adaptées à différents objectifs nutritionnels, qu'il s'agisse d'être végétarien, sans gluten ou vegan.",
   "type": "Projet de groupe : Roxane PRIEUR et Yuting ZHAO",
+  "hero": true,
   "images": {
     "hero": {
-      "src": "/portfolio/projects/welcome-lead/hero.png",
+      "src": "/portfolio/projects/boxit/hero.png",
       "alt": ""
     }
   },

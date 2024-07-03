@@ -30,6 +30,9 @@ export default {
           disabled: '#D2E1E6',
         },
       },
+      rotate: {
+        35: '35deg',
+      },
     },
   },
   plugins: [],

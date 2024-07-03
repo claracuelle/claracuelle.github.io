@@ -1,0 +1,13 @@
+{
+  "date": "2021-07-01",
+  "title": "Mouvement et inertie",
+  "description": "Notre consigne était de créer une photographie mêlant mouvement et inertie. À travers trois tableaux, j'ai répondu à cette consigne en racontant une histoire. Le mouvement est symbolisé par la vie de couple : les débuts joyeux, l'arrivée d'un enfant et la fin paisible. L'inertie se reflète dans notre perception du temps qui passe, soulignée par une photographie nette illustrant le moment présent. Un montage final unit ces tableaux pour former une seule et même histoire.",
+  "type": "Projet individuel",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/mouvement-et-inertie/hero.png",
+      "alt": ""
+    }
+  },
+  "tags": ["Photographie"]
+}

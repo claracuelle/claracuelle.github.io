@@ -1,0 +1,15 @@
+{
+  "date": "2021-07-01",
+  "title": "Lex4u",
+  "description": "Jok88 est une application conçue pour le lancement des NFT du casino Partouche en France. Elle propose des jeux quotidiens, une expérience en réalité augmentée et un chat pour communiquer avec son équipe. De plus, elle offre une carte personnelle aux détenteurs de NFT, permettant de cumuler des points en fonction des jeux effectués.",
+  "type": "Projet de groupe : Théa DUBILLY, Colin BOSTEL, Pamela THO, Simon LUBAKI et Lucas SABATHÉ",
+  "tags": ["Création graphique", "UX/UI", "Print"],
+  "hero": true,
+  "link": "https://lex4u.com/",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/jok88/hero.png",
+      "alt": ""
+    }
+  }
+}

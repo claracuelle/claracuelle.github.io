@@ -25,9 +25,7 @@ const projectsSorted = allProjects.sort(
           images={project.data.images}
           tags={project.data.tags}
         />
-        <hr
-          class={`${index === projectsSorted.length - 1 ? 'hidden' : 'text-expo-primary'}`}
-        />
+        <hr class={`${index === 2 ? 'hidden' : 'text-expo-primary'}`} />
       </>
     ))
   }

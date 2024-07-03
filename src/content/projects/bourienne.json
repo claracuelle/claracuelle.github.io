@@ -1,0 +1,13 @@
+{
+  "date": "2021-07-01",
+  "title": "Bourrienne",
+  "description": "Je suis intervenue en tant que photographe afin de réaliser un shooting mettant en valeur la chemise \"Impertinente\" de la collection Printemps/Été 2021. Cette pièce, conçue pour tous les corps, genres et individus, incarne un temps dédié à l'égalité. \"Bourrienne\" réinvente la chemise blanche en s'inspirant des détails du passé.",
+  "hero": true,
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/bourienne/hero.png",
+      "alt": ""
+    }
+  },
+  "tags": ["Photographie"]
+}

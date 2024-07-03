@@ -17,6 +17,10 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+    <script>
+      import { register } from 'swiper/element/bundle';
+      register();
+    </script>
     <style is:global>
       @font-face {
         font-family: 'Migra-Extrabold';
@@ -25,7 +29,6 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
         font-style: normal;
         font-display: swap;
       }
-
       @font-face {
         font-family: 'Manrope-Regular';
         src: url('/fonts/Manrope-Regular.woff') format('woff2');
@@ -38,7 +41,6 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
       *::after {
         @apply font-manrope;
       }
-
       .btn {
         @apply flex gap-2 justify-center items-center w-max px-10 py-2 border border-black transition-all duration-150 ease-in-out;
         svg {
@@ -46,7 +48,7 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
         }
         &:hover {
           svg {
-            @apply -rotate-12;
+            @apply -rotate-35;
           }
         }
         &.btn--primary {
@@ -61,7 +63,7 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
   </head>
   <body class='bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]'>
     <Header />
-    <main class='flex flex-col gap-5 lg:gap-10'>
+    <main class='flex flex-col gap-14 lg:gap-28'>
       <slot />
     </main>
     <Footer />

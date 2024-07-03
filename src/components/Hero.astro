@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import { Image } from 'astro:assets';
+import Icon from '../components/Icon.svelte';
 
 interface Props {
   overtitle?: string;
@@ -24,7 +25,7 @@ const {
 } = Astro.props;
 
 const allProjects = await getCollection('projects');
-const projectsToShow = allProjects.filter((project) => project.data.inHero);
+const projectsToShow = allProjects.filter((project) => project.data.hero);
 ---
 
 <section
@@ -44,6 +45,7 @@ const projectsToShow = allProjects.filter((project) => project.data.inHero);
             const alt = project.data.images.hero.alt;
             return (
               <Image
+                loading={'eager'}
                 class={`w-1/2 lg:w-1/4 aspect-[300/180] ${index > 1 ? 'hidden lg:block' : ''}`}
                 src={image}
                 alt={alt}
@@ -62,10 +64,19 @@ const projectsToShow = allProjects.filter((project) => project.data.inHero);
       <h3 class='uppercase font-medium'>{overtitle}</h3>
       <h1 class='uppercase font-migra text-7xl lg:text-9xl'>{title}</h1>
       <h2 class='uppercase font-medium text-lg lg:text-2xl'>{subtitle}</h2>
-      <div class='flex flex-col gap-3 items-end w-full'>
+      <div
+        class={`flex flex-col gap-3 items-end w-full mt-5 ${links.length === 0 ? 'hidden' : ''}`}
+      >
         {
           links?.map((link) => (
-            <a class='text-black' href={link.href}>
+            <a
+              class='text-black flex gap-2 justify-center items-center transition-all duration-150 ease-in-out [&_svg]:hover:rotate-0'
+              href={link.href}
+            >
+              <Icon
+                icon='arrow'
+                classValue='w-4 h-4 fill-black -rotate-35 transition-all duration-150 ease-in-out'
+              />
               {link.label}
             </a>
           ))
@@ -77,12 +88,13 @@ const projectsToShow = allProjects.filter((project) => project.data.inHero);
       class={`absolute bottom-0 translate-y-1/2 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] gap-24 w-full ${projectsToShow.length < 8 ? 'hidden' : 'flex'}`}
     >
       {
-        projectsToShow?.slice(3, 4).map((project, index) => {
+        projectsToShow?.slice(3, 8).map((project, index) => {
           if (project) {
             const image = project.data.images.hero.src;
             const alt = project.data.images.hero.alt;
             return (
               <Image
+                loading={'eager'}
                 class={`w-1/2 lg:w-1/4 aspect-[300/180] ${index > 1 ? 'hidden lg:block' : ''}`}
                 src={image}
                 alt={alt}
