@@ -7,14 +7,15 @@ const projectsCollection = defineCollection({
       title: z.string(),
       description: z.string(),
       type: z.string().optional(),
-      link: z.string().optional() ,
+      link: z.string().optional(),
+      inHero: z.boolean().default(false),
+      tags: z.array(z.string()),
       images: z.object({
         hero: z.object({
           src: z.string(),
           alt: z.string(),
         })
       }),
-      tags: z.array(z.string())
     })
 });
 

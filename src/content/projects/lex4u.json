@@ -1,0 +1,14 @@
+{
+  "date": "2021-07-01",
+  "title": "Lex4u",
+  "description": "Lex4u est une plateforme en ligne qui met en relation des clients avec des avocats et des experts juridiques pour des conseils et des services juridiques personnalisés. Leur objectif est de rendre le droit plus accessible et de faciliter les démarches juridiques pour tous. Lors de mon alternance, j'ai du réaliser le site vitrine en m'adaptant à la charte graphique d'une autre agence, ainsi qu'un papier à lettre et une carte de visite.",
+  "type": "Projet individuel en entreprise",
+  "tags": ["Webdesign", "UX/UI", "Print"],
+  "link": "https://lex4u.com/",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/maroc/hero.png",
+      "alt": ""
+    }
+  }
+}

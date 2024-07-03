@@ -1,0 +1,12 @@
+{
+  "date": "2021-08-01",
+  "title": "AXCIO Data",
+  "description": "Rebranding et réalisation du site vitrine d’Axcio Data. Ils proposent des solutions \"Easy\" pour le stockage et la protection des données d'entreprises, spécialement pour les professionnels du bâtiment. Ils offrent un espace de travail collaboratif, des QR codes  et le stockage de données variées. Leur objectif : simplifier l'accès aux données numériques des professionnels.",
+  "images": {
+    "hero": {
+      "src": "/portfolio/projects/welcome-lead/hero.png",
+      "alt": ""
+    }
+  },
+  "tags": ["Webdesign", "Rebranding", "UX/UI"]
+}

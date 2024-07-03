@@ -8,7 +8,6 @@ interface Props {
   title?: string;
   subtitle?: string;
   links?: Array<{ href: string; label: string }>;
-  projects?: Array<string>;
 }
 
 const {
@@ -22,13 +21,10 @@ const {
     },
     { label: 'Instagram', href: 'https://www.instagram.com/claracuelle/' },
   ],
-  projects,
 } = Astro.props;
 
 const allProjects = await getCollection('projects');
-const projectsToShow = projects?.map((project) =>
-  allProjects.find((_project) => _project.id === project)
-);
+const projectsToShow = allProjects.filter((project) => project.data.inHero);
 ---
 
 <section
@@ -39,7 +35,7 @@ const projectsToShow = projects?.map((project) =>
     class='relative grid gap-16 grid-rows-[auto_1fr_auto] bg-expo-secondary w-full'
   >
     <div
-      class='absolute top-0 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] flex gap-24 w-full'
+      class={`absolute top-0 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] gap-24 w-full ${projectsToShow.length < 8 ? 'hidden' : 'flex'}`}
     >
       {
         projectsToShow?.slice(0, 4).map((project, index) => {
@@ -78,10 +74,10 @@ const projectsToShow = projects?.map((project) =>
     </div>
     <div class='aspect-[300/90] w-1/2 lg:w-1/4'></div>
     <div
-      class='absolute bottom-0 translate-y-1/2 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] flex gap-24 w-full'
+      class={`absolute bottom-0 translate-y-1/2 -left-[var(--left-pos-mobile)] lg:-left-[var(--left-pos-desktop)] gap-24 w-full ${projectsToShow.length < 8 ? 'hidden' : 'flex'}`}
     >
       {
-        projectsToShow?.slice(0, 4).map((project, index) => {
+        projectsToShow?.slice(3, 4).map((project, index) => {
           if (project) {
             const image = project.data.images.hero.src;
             const alt = project.data.images.hero.alt;

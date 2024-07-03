@@ -29,9 +29,9 @@ const { id, title, description, images, tags } = Astro.props;
     alt={images.hero.alt}
   />
   <div
-    class={`grid ${!images.thumbnails || images.thumbnails.length === 0 ? 'grid-rows-[1fr_auto]' : 'grid-rows-[1fr_1fr_auto]'} gap-3`}
+    class={`grid ${!images.thumbnails || images.thumbnails.length === 0 ? 'grid-rows-[1fr_auto]' : 'grid-rows-[1fr_1fr_auto]'} gap-5`}
   >
-    <div>
+    <div class='flex flex-wrap flex-col gap-3'>
       <div
         class='flex flex-wrap flex-col lg:flex-row gap-2 lg:gap-x-10 items-center'
       >
