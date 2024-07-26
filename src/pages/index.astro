@@ -5,8 +5,20 @@ import Projects from '../components/Projects.astro';
 import Others from '../components/Others.astro';
 ---
 
-<Base>
-  <Hero />
-  <Projects />
-  <Others />
-</Base>
+{
+  import.meta.env.DEV ? (
+    <Base>
+      <Hero />
+      <Projects />
+      <Others />
+    </Base>
+  ) : (
+    <Base>
+      <div class='fixed top-0 left-0 w-full h-full'>
+        <h1 class='text-xl font-migra text-expo-primary'>
+          Site en cours de construction ...
+        </h1>
+      </div>
+    </Base>
+  )
+}

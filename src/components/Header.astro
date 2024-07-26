@@ -3,7 +3,7 @@ import Icon from '../components/Icon.svelte';
 ---
 
 <header
-  class='sticky top-0 left-0 w-full z-50 grid lg:grid-cols-2 items-center py-3 px-3 lg:px-16 border-b border-expo-primary [&.active]:bg-white'
+  class='sticky top-0 left-0 w-full z-50 grid lg:grid-cols-2 items-center py-3 px-3 lg:px-16 border-b border-expo-primary bg-white/40 backdrop-blur-xl'
 >
   <div class='relative z-20 flex justify-between items-center w-full lg:w-auto'>
     <a class='flex justify-center items-center w-max' href='/portfolio'>
@@ -24,7 +24,7 @@ import Icon from '../components/Icon.svelte';
   </div>
   <nav
     id='menu'
-    class='fixed top-0 left-0 bottom-0 right-0 lg:top-auto lg:left-auto lg:bottom-auto lg:right-auto transition-transform duration-300 ease-in-out translate-x-full [&.active]:translate-x-0 lg:relative lg:!translate-x-0 bg-white'
+    class='fixed top-0 left-0 bottom-0 right-0 lg:top-auto lg:left-auto lg:bottom-auto lg:right-auto transition-transform duration-300 ease-in-out translate-x-full [&.active]:translate-x-0 lg:relative lg:!translate-x-0 bg-white lg:bg-transparent'
   >
     <ul
       class='flex flex-col lg:flex-row justify-center lg:justify-between items-center h-full gap-6'
@@ -38,7 +38,7 @@ import Icon from '../components/Icon.svelte';
       <li>
         <a
           class={`[&.active]:text-expo-primary hover:text-expo-primary [&.active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/projects') ? 'active' : ''}`}
-          href='/portfolio/projects'>Mes réalisations</a
+          href='/portfolio/projects/1'>Mes réalisations</a
         >
       </li>
       <li>
