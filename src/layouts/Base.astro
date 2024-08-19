@@ -62,7 +62,7 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
     </style>
   </head>
   <body class='bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]'>
-    { !import.meta.env.DEV ? 
+    { import.meta.env.DEV ? 
       <Header />
       <main class='flex flex-col gap-14 lg:gap-28'>
         <slot />
