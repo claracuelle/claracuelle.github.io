@@ -1,0 +1,21 @@
+---
+  import Icon from './Icon.astro';
+
+  interface Props {
+    title: string,
+    href: string
+  }
+
+  const { title, href } = Astro.props
+---
+
+<a
+  class="text-black flex gap-2 justify-center items-center transition-all duration-150 ease-in-out [&_svg]:hover:rotate-0"
+  {href}
+>
+  <Icon
+    icon="arrow"
+    class="w-4 h-4 fill-black -rotate-35 transition-all duration-150 ease-in-out"
+  />
+  {title}
+</a>

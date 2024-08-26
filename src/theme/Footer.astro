@@ -14,14 +14,14 @@ const { title = 'Portfolio Clara Cuelle' } = Astro.props;
       <li>
         <a
           href='/portfolio/about'
-          class={`[&.active]:text-expo-primary hover:text-expo-primary [&.active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/about') ? 'active' : ''}`}
+          class={`[&.is-active]:text-expo-primary hover:text-expo-primary [&.is-active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/about') ? 'is-active' : ''}`}
           >À propos</a
         >
       </li>
       <li>
         <a
           href='/portfolio/projects/1'
-          class={`[&.active]:text-expo-primary hover:text-expo-primary [&.active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/projects') ? 'active' : ''}`}
+          class={`[&.is-active]:text-expo-primary hover:text-expo-primary [&.is-active]:font-bold hover:font-bold ${Astro.url.pathname.includes('/projects') ? 'is-active' : ''}`}
           >Mes réalisations</a
         >
       </li>

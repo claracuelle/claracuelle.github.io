@@ -16,27 +16,25 @@ const projectsSorted = allProjects
   .slice(3, -1);
 ---
 
-<section id='others' class='flex flex-col gap-8'>
-  <h1
-    class='container mx-auto px-3 font-migra underline underline-offset-8 decoration-expo-primary text-xl lg:text-3xl'
-  >
-    {title}
-  </h1>
-  <div class='w-screen overflow-hidden'>
-    <div class='container mx-auto px-3 overflow-visible'>
-      <swiper-container
-        class='[&::part(container)]:overflow-visible'
-        slides-per-view='1.5'
-        space-between='40'
+<section class='w-screen overflow-hidden'>
+  <div class='container mx-auto px-3 overflow-visible'>
+    <div id='others-swiper' class="swiper !overflow-visible">
+      <h1
+        class='container mx-auto px-3 font-migra underline underline-offset-8 decoration-expo-primary text-xl pb-8 lg:text-3xl'
       >
+        {title}
+      </h1>
+      <button type="button" class="prev">prev</button>
+      <button type="button" class="next">next</button>
+      <div class="swiper-wrapper">
         {
           projectsSorted.map((project) => {
             if (project.data.images.hero) {
               return (
-                <swiper-slide>
+                <div class="swiper-slide">
                   <div class='flex flex-col gap-3'>
                     <Image
-                      loading={'eager'}
+                      loading={'lazy'}
                       class='w-full aspect-[300/180]'
                       width={300}
                       height={180}
@@ -52,34 +50,42 @@ const projectsSorted = allProjects
                       ))}
                     </div>
                   </div>
-                </swiper-slide>
+                </div>
               );
             }
           })
         }
-      </swiper-container>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  const $swiper = document.querySelector('#others swiper-container');
-  (() => {
-    if (window.innerWidth < 1024) {
-      $swiper?.setAttribute('slides-per-view', '1.5');
-      $swiper?.setAttribute('space-between', '20');
-    } else {
-      $swiper?.setAttribute('slides-per-view', '3.5');
-      $swiper?.setAttribute('space-between', '40');
-    }
-  })();
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 1024) {
-      $swiper?.setAttribute('slides-per-view', '1.5');
-      $swiper?.setAttribute('space-between', '20');
-    } else {
-      $swiper?.setAttribute('slides-per-view', '3.5');
-      $swiper?.setAttribute('space-between', '40');
-    }
-  });
+  import Swiper from 'swiper';
+
+  const $swiper = document.getElementById('others-swiper')
+  const $prev = $swiper?.querySelector<HTMLElement>('.prev')
+  const $next = $swiper?.querySelector<HTMLElement>('.next')
+
+  if ($swiper) {
+    const swiper = new Swiper($swiper, {
+      slidesPerView: 2.3,
+      spaceBetween: 8,
+      breakpoints: {
+        768: {
+          slidesPerView: 3.3,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: 4.3,
+          spaceBetween: 32
+        }
+      },
+      navigation: {
+        nextEl: $next,
+        prevEl: $prev,
+      }
+    })
+    console.log({swiper, $next, $prev});
+  }
 </script>

@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../theme/Header.astro';
+import Footer from '../theme/Footer.astro';
 
 interface Props {
   title?: string;
@@ -18,20 +18,19 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
     <script>
-      import { register } from 'swiper/element/bundle';
-      register();
+      import 'swiper/css';
     </script>
     <style is:global>
       @font-face {
         font-family: 'Migra-Extrabold';
-        src: url('../../public/fonts/Migra-Extrabold.woff2') format('woff2');
+        src: url('/portfolio/fonts/Migra-Extrabold.woff2') format('woff2');
         font-weight: 900;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
         font-family: 'Manrope-Regular';
-        src: url('../../public/fonts/Manrope-Regular.woff2') format('woff2');
+        src: url('/portfolio/fonts/Manrope-Regular.woff2') format('woff2');
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -61,7 +60,7 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
       }
     </style>
   </head>
-  <body class='bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]'>
+  <body class='overflow-x-hidden bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]'>
     { import.meta.env.DEV ? 
       <Header />
       <main class='flex flex-col gap-14 lg:gap-28'>
