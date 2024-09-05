@@ -1,6 +1,7 @@
 ---
 import Header from '../theme/Header.astro';
 import Footer from '../theme/Footer.astro';
+import Icon from '../components/Icon.astro';
 
 interface Props {
   title?: string;
@@ -60,19 +61,30 @@ const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
       }
     </style>
   </head>
-  <body class='overflow-x-hidden bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]'>
+  <body class={import.meta.env.DEV ? "overflow-x-hidden bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]" : "overflow-x-hidden bg-expo-secondary-disabled h-[100dvh] w-[100dvw]"}''>
     { import.meta.env.DEV ? 
       <Header />
       <main class='flex flex-col gap-14 lg:gap-28'>
         <slot />
       </main>
       <Footer /> :
-      <div class='flex flex-col justify-center items-center gap-10 bg-expo-secondary-disabled h-screen w-full'>
+        <div class="container px-3 mx-auto flex h-full w-full flex-col justify-center items-center gap-10">
           <h1 class='block text-center text-4xl font-bold text-expo-primary font-migra'>Site en cours de construction</h1>
-          <a class="block text-center text-2xl underline text-expo-primary" href="/portfolio/Portfolio2024_Clara-Cuelle.pdf" download="Portfolio2024_Clara-Cuelle.pdf">Télecharger mon portfolio</a>
-          <a class="block text-center text-1xl underline text-expo-primary" href="/portfolio/Portfolio2024_Clara-Cuelle.pdf">Voir mon portfolio</a>
+          <div class="flex flex-col gap-6 md:flex-row w-full justify-center items-center">
+            <div class="flex gap-4 justify-center items-center text-2xl font-migra text-expo-primary">
+              CV
+              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/CV2024_Clara-Cuelle.pdf" download="CV2024_Clara-Cuelle.pdf" aria-label="Voir mon portfolio"><Icon icon='download'></Icon></a>
+              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/CV2024_Clara-Cuelle.pdf" aria-label="Voir mon portfolio"><Icon icon='see'></Icon></a>
+            </div>
+            <span class="hidden md:block w-[1px] bg-expo-primary-pressed h-full"></span>
+            <div class="flex gap-4 justify-center items-center text-2xl font-migra text-expo-primary">
+              Portfolio
+              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/Portfolio2024_Clara-Cuelle.pdf" download="Portfolio2024_Clara-Cuelle.pdf" aria-label="Télecharger mon portfolio"><Icon icon='download'></Icon></a>
+              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/Portfolio2024_Clara-Cuelle.pdf" aria-label="Voir mon portfolio"><Icon icon='see'></Icon></a>
+            </div>
+          </div>
           <p class='block text-center text-lg text-expo-primary'>Revenez bientôt pour découvrir mon nouveau site</p>
-      </div>
+        </div>
     }
   </body>
 </html>
