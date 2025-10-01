@@ -1,90 +1,35 @@
 ---
-import Header from '../theme/Header.astro';
-import Footer from '../theme/Footer.astro';
-import Icon from '../components/Icon.astro';
-
 interface Props {
-  title?: string;
+	title?: string;
 }
 
-const { title = 'Clara Cuelle - Directrice artistique | Webdesigner' } =
-  Astro.props as Props;
+const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
+	Astro.props as Props;
 ---
 
 <html lang='fr'>
   <head>
     <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/portfolio/logo.svg' />
+    <link rel='icon' type='image/svg+xml' href='/portfolio/logo-clara-cuelle-studio.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <script>
-      import 'swiper/css';
-    </script>
     <style is:global>
       @font-face {
-        font-family: 'Migra-Extrabold';
-        src: url('/portfolio/fonts/Migra-Extrabold.woff2') format('woff2');
-        font-weight: 900;
+        font-family: 'Boldonse';
+        src: url('/portfolio/fonts/Boldonse-Regular.woff2') format('woff2');
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: 'Manrope-Regular';
-        src: url('/portfolio/fonts/Manrope-Regular.woff2') format('woff2');
-        font-weight: 400;
+        font-family: 'Geist';
+        src: url('/portfolio/fonts/Geist-VariableFont_wght.woff2') format('woff2');
         font-style: normal;
         font-display: swap;
-      }
-      *,
-      *::before,
-      *::after {
-        @apply font-manrope;
-      }
-      .btn {
-        @apply flex gap-2 justify-center items-center w-max px-10 py-2 border border-black transition-all duration-150 ease-in-out;
-        svg {
-          @apply transition-all duration-150 ease-in-out;
-        }
-        &:hover {
-          svg {
-            @apply -rotate-35;
-          }
-        }
-        &.btn--primary {
-          @apply bg-black text-white hover:bg-expo-primary hover:border-expo-primary;
-          svg,
-          path {
-            @apply text-white fill-white;
-          }
-        }
       }
     </style>
   </head>
-  <body class={import.meta.env.DEV ? "overflow-x-hidden bg-white min-h-[100dvh] grid grid-rows-[auto_1fr_auto]" : "overflow-x-hidden bg-expo-secondary-disabled h-[100dvh] w-[100dvw]"}''>
-    { import.meta.env.DEV ? 
-      <Header />
-      <main class='flex flex-col gap-14 lg:gap-28'>
-        <slot />
-      </main>
-      <Footer /> :
-        <div class="container px-3 mx-auto flex h-full w-full flex-col justify-center items-center gap-10">
-          <h1 class='block text-center text-4xl font-bold text-expo-primary font-migra'>Site en cours de construction</h1>
-          <div class="flex flex-col gap-6 md:flex-row w-full justify-center items-center">
-            <div class="flex gap-4 justify-center items-center text-2xl font-migra text-expo-primary">
-              CV
-              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/CV2024_Clara-Cuelle.pdf" download="CV2024_Clara-Cuelle.pdf" aria-label="Voir mon portfolio"><Icon icon='download'></Icon></a>
-              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/CV2024_Clara-Cuelle.pdf" aria-label="Voir mon portfolio"><Icon icon='see'></Icon></a>
-            </div>
-            <span class="hidden md:block w-[1px] bg-expo-primary-pressed h-full"></span>
-            <div class="flex gap-4 justify-center items-center text-2xl font-migra text-expo-primary">
-              Portfolio
-              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/Portfolio2024_Clara-Cuelle.pdf" download="Portfolio2024_Clara-Cuelle.pdf" aria-label="Télecharger mon portfolio"><Icon icon='download'></Icon></a>
-              <a class="block text-center text-2xl underline text-expo-primary p-1" href="/portfolio/Portfolio2024_Clara-Cuelle.pdf" aria-label="Voir mon portfolio"><Icon icon='see'></Icon></a>
-            </div>
-          </div>
-          <p class='block text-center text-lg text-expo-primary'>Revenez bientôt pour découvrir mon nouveau site</p>
-        </div>
-    }
+  <body>
+    <slot></slot>
   </body>
 </html>
