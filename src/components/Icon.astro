@@ -1,123 +1,15 @@
 ---
-interface Props {
-  class?: string
-  icon: 'arrow'
-      | 'check'
-      | 'close'
-      | 'copy'
-      | 'menu'
-      | 'logo'
-      | 'mail'
-      | 'download'
-      | 'see'
-}
+type IconName = "eye";
 
-let { class: className, icon } = Astro.props
-className = `object-contain ${icon} ${className}`
+type IconProps = {
+	name: IconName;
+};
+
+const { name } = Astro.props as IconProps;
 ---
 
 {
-  icon === 'arrow' ?
-  <svg
-      class={className}
-      width="13"
-      height="12"
-      viewBox="0 0 13 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7.782 10.978 13 5.598 7.782.22a.55.55 0 0 0-.398-.218.53.53 0 0 0-.421.165.56.56 0 0 0-.155.434.57.57 0 0 0 .219.405l3.904 4.037H.543a.54.54 0 0 0-.384.163.564.564 0 0 0 0 .788c.102.104.24.163.384.163h10.388l-3.904 4.037a.565.565 0 0 0 .002.788.537.537 0 0 0 .769-.003z"
-        fill="currentColor"
-      />
-    </svg> : null
-}
-{
-  icon === 'check' ?
-    <svg
-      class={className}
-      width="22"
-      height="19"
-      viewBox="0 0 22 19"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        d="M2 8.667 8.429 17 20 2"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      /></svg>: null
-}
-{
-  icon === 'close' ?
-    <svg
-      class={className}
-      width="14"
-      height="14"
-      viewBox="0 0 14 14"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        d="M2.1 13.3a.99.99 0 0 1-1.4-1.4l4.193-4.193a1 1 0 0 0 0-1.414L.7 2.1A.99.99 0 0 1 2.1.7l4.193 4.193a1 1 0 0 0 1.414 0L11.9.7a.99.99 0 1 1 1.4 1.4L9.107 6.293a1 1 0 0 0 0 1.414L13.3 11.9a.99.99 0 1 1-1.4 1.4L7.707 9.107a1 1 0 0 0-1.414 0z"
-        fill="currentColor"
-      /></svg> : null
-}
-{
-  icon === 'copy' ?
-    <svg
-      class={className}
-      width="15"
-      height="15"
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        d="M14.375 0h-10a.625.625 0 0 0-.625.625V3.75H.625A.625.625 0 0 0 0 4.375v10A.625.625 0 0 0 .625 15h10a.624.624 0 0 0 .625-.625V11.25h3.125a.624.624 0 0 0 .625-.625v-10A.625.625 0 0 0 14.375 0M10 13.75H1.25V5H10zM13.75 10h-2.5V4.375a.625.625 0 0 0-.625-.625H5v-2.5h8.75z"
-        fill="currentColor"
-      /></svg> : null
-}
-{
-  icon === 'menu' ? <svg
-      class={className}
-      width="18"
-      height="19"
-      viewBox="0 0 18 19"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        d="M1.25 18.5a1.25 1.25 0 1 1 0-2.5h15.5a1.25 1.25 0 1 1 0 2.5zm0-7.5a1.25 1.25 0 1 1 0-2.5h15.5a1.25 1.25 0 1 1 0 2.5zm0-8a1.25 1.25 0 1 1 0-2.5h15.5a1.25 1.25 0 1 1 0 2.5z"
-        fill="currentColor"
-      /></svg> : null
-}
-{
-  icon === 'logo' ?
-    <svg
-      class={className}
-      width="124"
-      height="201"
-      viewBox="0 0 124 201"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>Logo Clara Cuelle</title>
-      <path
-        d="M62 28h14.667V0H62zm-15.1 6.867C35.967 38.333 28.9 43 20.367 51.933 6.767 66.067.5 82.867.5 104.733c0 16.134 1.733 24.4 7.733 36.934 9.2 19.6 27.067 32.933 48.667 36.666l4.933.667v21.333H76.5V179l4-.667 5-.833c9-2 19.267-6.767 27.533-15.833 7.334-8.267 10.134-16.534 10.134-29.734 0-6.156-.567-9.433-1.167-10.933s-.927-2.927-2.5-4.5-4-1.5-5.5-1.5H96.233s-4.733 0-6.06-.022c-.34-.006-.34 0-.34.269v16.82c0 20-1.7 29.166-7.833 35.433-2.267 2.4-5.467 3.5-6 3.5 0-.5-.033-24.533.233-54.667l.4-54.666h-14.8V171l-3.333-.5c-8.4-2.533-17.2-9.633-18.667-15.9-.4-1.6-.666-24.667-.4-51.2 0 0 .067-27.4.067-40.9v-7c0-1 1.858-4.358 3.5-6s5.5-6.5 17-9c2.3-.5 9.167-.91 9.167-.91S77.633 39.268 83.5 41s15.667 8.8 15.667 12.267c0 1.2-2.134 5.333-4.8 9.066-5.734 8.4-7.067 15.734-4 21.867 5.2 9.867 19.733 12.8 27.733 5.6 3.733-3.333 4.267-4.667 4.8-12.267 1.333-20.933-12-37.066-35.2-43.066-11.2-2.934-31.067-2.667-40.8.4"
-        fill="currentColor"
-      />
-    </svg> : null
-}
-{
-  icon === 'mail' ?
-    <svg class={className} width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="m1.5 1.5 5.75 5 5.75-5M1 1h12.5v9.5H1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg> : null
-}
-{
-  icon === 'download' ?
-  <svg class={className} xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58zM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160z"/></svg>: null
-}
-{
-  icon === 'see' ?
-  <svg class={className} xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500t-52.5-127.5T480-680t-127.5 52.5T300-500t52.5 127.5T480-320m0-72q-45 0-76.5-31.5T372-500t31.5-76.5T480-608t76.5 31.5T588-500t-31.5 76.5T480-392m0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800t266 81.5T920-500q-54 137-174 218.5T480-200m0-80q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720t-207.5 59.5T128-500q50 101 144.5 160.5T480-280"/></svg> : null
+  name === "eye" && (
+    <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1.96a9.8 9.8 0 0 1 3-.46c4.182 0 7.028 2.5 8.725 4.704C20.575 7.31 21 7.861 21 9.5c0 1.64-.425 2.191-1.275 3.296C18.028 15 15.182 17.5 11 17.5S3.972 15 2.275 12.796C1.425 11.692 1 11.14 1 9.5s.425-2.191 1.275-3.296A14.5 14.5 0 0 1 4 4.321" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 9.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke="currentColor" stroke-width="2"/></svg>
+  )
 }

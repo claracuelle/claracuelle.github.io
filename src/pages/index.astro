@@ -1,24 +1,33 @@
 ---
-import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
-import Projects from '../components/Projects.astro';
-import Others from '../components/Others.astro';
+import Base from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+import Name from "../../public/name.svg";
+import Icon from "../components/Icon.astro";
 ---
 
-{
-  import.meta.env.DEV ? (
-    <Base>
-      <Hero />
-      <Projects />
-      <Others />
-    </Base>
-  ) : (
-    <Base>
-      <div class='fixed top-0 left-0 w-full h-full'>
-        <h1 class='text-xl font-migra text-expo-primary'>
-          Site en cours de construction ...
-        </h1>
+<Base>
+<section class="flex justify-center items-center min-h-[100dvh] bg-blue bg-[url('/portfolio/logo-shape.svg')] bg-center bg-no-repeat bg-cover">
+  <div class="container mx-auto p-5 flex flex-col justify-center items-center text-center gap-5 lg:gap-10 text-white">
+    <Image class="w-full lg:max-w-[33dvw] mx-auto object-contain" src={Name} alt="Clara Cuelle Studio" />
+    <h1 class="font-title text-2xl leading-10">Directrice artistique digitale & UX/UI Designer</h1>
+    <div class="flex flex-wrap justify-center items-center gap-6">
+      <a class="flex gap-4 justify-center items-center py-4 px-6 bg-orange text-center rounded text-blue" href="/portfolio/cv-clara-cuelle.pdf">
+        <Icon name="eye"></Icon>
+        <span class="font-body font-medium text-xl">CV</span>
+      </a>
+      <a class="flex gap-4 justify-center items-center py-4 px-6 bg-orange text-center rounded text-blue" href="/portfolio/cv-clara-cuelle.pdf">
+        <Icon name="eye"></Icon>
+        <span class="font-body font-medium text-xl">Portfolio</span>
+      </a>
+    </div>
+    <div class="flex flex-col gap-4">
+      <span class="font-title mt-20">Site en construction</span>
+      <div class="flex flex-wrap gap-6 justify-center items-center">
+        <a href="https://www.instagram.com/claracuelle.studio/" class="underline underline-offset-2 transition-all duration-300 ease-in-out hover:decoration-white/70">Instagram</a>
+        <a href="https://www.linkedin.com/in/clara-cuelle/" class="underline underline-offset-2 transition-all duration-300 ease-in-out hover:decoration-white/70">LinkedIn</a>
+        <a href="https://www.behance.net/claracuelle_studio" class="underline underline-offset-2 transition-all duration-300 ease-in-out hover:decoration-white/70">Bēhance</a>
       </div>
-    </Base>
-  )
-}
+    </div>
+  </div>
+</section>
+</Base>
