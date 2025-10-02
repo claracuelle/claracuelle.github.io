@@ -10,26 +10,79 @@ const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
 <html lang='fr'>
   <head>
     <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/portfolio/logo-clara-cuelle-studio.svg' />
+    <link rel='icon' type='image/svg+xml' href='/logo-clara-cuelle-studio.svg' />
+    <link rel="canonical" href="https://claracuelle.github.io/" />
+
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
+    <meta name="description" content="Portfolio de Clara Cuelle, directrice artistique, portfolio UX/UI designer, webdesign et direction artistique. Découvrez ses projets créatifs en design digital, identité visuelle et expérience utilisateur." />
+    <meta name="keywords" content="portfolio design, direction artistique, designer UX/UI, identité visuelle, projets créatifs, Clara Cuelle, webdesigner, UX/UI, design graphique, expérience utilisateur, création digitale" />
+    <meta name="author" content="Clara Cuelle" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="Clara Cuelle - Directrice artistique | Webdesigner | UX/UI Designer" />
+    <meta property="og:description" content="Découvrez le portfolio de Clara Cuelle, experte en direction artistique, design UX/UI et webdesign." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://claracuelle.github.io/" />
+    <meta property="og:image" content="https://claracuelle.github.io/og-image.jpg" />
+    <meta property="og:image:alt" content="Portfolio de Clara Cuelle, directrice artistique et UX/UI designer" />
+    <meta property="og:site_name" content="Clara Cuelle Portfolio" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clara Cuelle - Directrice artistique | Webdesigner | UX/UI Designer" />
+    <meta name="twitter:description" content="Portfolio de Clara Cuelle en design UX/UI, webdesign et direction artistique." />
+    <meta name="twitter:image" content="https://claracuelle.github.io/og-image.jpg" />
+    <meta name="twitter:site" content="https://claracuelle.github.io/" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta property="instapp:owner_user_id" content="claracuelle.studio" />
+    <meta property="al:ios:app_name" content="Instagram" />
+    <meta property="al:ios:app_store_id" content="389801252" />
+    <meta property="al:ios:url" content="instagram://user?username=claracuelle.studio" />
+    <meta property="al:android:app_name" content="Instagram" />
+    <meta property="al:android:package" content="com.instagram.android" />
+    <meta property="al:android:url" content="https://www.instagram.com/claracuelle.studio" />
+
+    <meta property="fb:app_id" content="123456789012345" />
+    <meta property="fb:pages" content="987654321098765" />
+
+    <meta name="pinterest" content="nopin" />
+
     <style is:global>
       @font-face {
         font-family: 'Boldonse';
-        src: url('/portfolio/fonts/Boldonse-Regular.woff2') format('woff2');
+        src: url('/fonts/Boldonse-Regular.woff2') format('woff2');
         font-style: normal;
         font-display: swap;
       }
       @font-face {
         font-family: 'Geist';
-        src: url('/portfolio/fonts/Geist-VariableFont_wght.woff2') format('woff2');
+        src: url('/fonts/Geist-VariableFont_wght.woff2') format('woff2');
         font-style: normal;
         font-display: swap;
       }
     </style>
+
+    <title>{title}</title>
   </head>
+
   <body>
     <slot></slot>
   </body>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Clara Cuelle",
+      "url": "https://claracuelle.github.io/",
+      "image": "https://claracuelle.github.io/og-image.jpg",
+      "jobTitle": "Directrice artistique, Webdesigner, UX/UI Designer",
+      "sameAs": [
+        "https://www.instagram.com/claracuelle.studio",
+      ],
+      "description": "Portfolio de Clara Cuelle, directrice artistique, portfolio UX/UI designer, webdesign et direction artistique. Découvrez ses projets créatifs en design digital, identité visuelle et expérience utilisateur."
+    }
+  </script>
 </html>
