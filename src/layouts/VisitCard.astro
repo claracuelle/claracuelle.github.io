@@ -8,7 +8,7 @@ import Eye from "/public/icons/icon-eye.svg";
 
 <Base>
   <main
-    class="relative isolate flex flex-col justify-between items-center h-screen overflow-hidden bg-beige lg:items-start p-8 lg:p-20"
+    class="relative isolate flex flex-col justify-between items-center max-h-dvh overflow-hidden bg-beige lg:items-start p-8 lg:p-20"
   >
     <Icon
       aria-hidden="true"
@@ -87,7 +87,6 @@ import Eye from "/public/icons/icon-eye.svg";
         </li>
       </ul>
     </nav>
-
   </main>
 
   <dialog id="panel-pdf" class="panel">
@@ -111,13 +110,15 @@ import Eye from "/public/icons/icon-eye.svg";
             <a
               href="/documents/cv-clara-cuelle.pdf"
               class="link-huge rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
-            >CV</a>
+              >CV</a
+            >
           </li>
           <li>
             <a
               href="/documents/portfolio-clara-cuelle.pdf"
               class="link-huge rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
-            >Portfolio</a>
+              >Portfolio</a
+            >
           </li>
         </ul>
       </nav>
@@ -139,31 +140,34 @@ import Eye from "/public/icons/icon-eye.svg";
         </button>
       </header>
 
-      <nav class="mt-auto md:self-end md:text-right" aria-label="Réseaux sociaux">
+      <nav
+        class="mt-auto md:self-end md:text-right"
+        aria-label="Réseaux sociaux"
+      >
         <ul class="flex flex-col gap-[10px]">
           <li>
             <a
               href="https://www.instagram.com/claracuelle.studio"
               class="link-huge rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
               target="_blank"
-              rel="noopener noreferrer"
-            >Instagram</a>
+              rel="noopener noreferrer">Instagram</a
+            >
           </li>
           <li>
             <a
               href="https://www.linkedin.com/in/clara-cuelle/"
               class="link-huge rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
               target="_blank"
-              rel="noopener noreferrer"
-            >LinkedIn</a>
+              rel="noopener noreferrer">LinkedIn</a
+            >
           </li>
           <li>
             <a
               href="https://www.behance.net/claracuelle_studio"
               class="link-huge rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue"
               target="_blank"
-              rel="noopener noreferrer"
-            >Behance</a>
+              rel="noopener noreferrer">Behance</a
+            >
           </li>
         </ul>
       </nav>
