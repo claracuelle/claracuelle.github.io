@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
   title?: string;
 }
@@ -11,9 +13,16 @@ const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
   <head>
     <meta charset="utf-8" />
     <link
+      rel="preload"
+      href="/fonts/Boldonse-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
       rel="icon"
       type="image/svg+xml"
-      href="/logo-clara-cuelle-studio.svg"
+      href="/icons/icon-clara-cuelle.svg"
     />
     <link rel="canonical" href="https://claracuelle.github.io/" />
 
@@ -42,7 +51,7 @@ const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
     <meta property="og:url" content="https://claracuelle.github.io/" />
     <meta
       property="og:image"
-      content="https://claracuelle.github.io/og-image.webp"
+      content="https://claracuelle.github.io/images/og-image.webp"
     />
     <meta
       property="og:image:alt"
@@ -62,7 +71,7 @@ const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
     />
     <meta
       name="twitter:image"
-      content="https://claracuelle.github.io/og-image.webp"
+      content="https://claracuelle.github.io/images/og-image.webp"
     />
     <meta name="twitter:site" content="https://claracuelle.github.io/" />
     <meta name="theme-color" content="#ffffff" />
@@ -89,12 +98,14 @@ const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
         font-family: "Boldonse";
         src: url("/fonts/Boldonse-Regular.woff2") format("woff2");
         font-style: normal;
+        font-weight: 400;
         font-display: swap;
       }
       @font-face {
         font-family: "Geist";
         src: url("/fonts/Geist-VariableFont_wght.woff2") format("woff2");
         font-style: normal;
+        font-weight: 100 900;
         font-display: swap;
       }
     </style>
@@ -112,7 +123,7 @@ const { title = "Clara Cuelle - Directrice artistique | Webdesigner" } =
       "@type": "Person",
       "name": "Clara Cuelle",
       "url": "https://claracuelle.github.io/",
-      "image": "https://claracuelle.github.io/og-image.webp",
+      "image": "https://claracuelle.github.io/images/og-image.webp",
       "jobTitle": "Directrice artistique, Webdesigner, UX/UI Designer",
       "sameAs": ["https://www.instagram.com/claracuelle.studio"],
       "description": "Portfolio de Clara Cuelle, directrice artistique, portfolio UX/UI designer, webdesign et direction artistique. Découvrez ses projets créatifs en design digital, identité visuelle et expérience utilisateur."
