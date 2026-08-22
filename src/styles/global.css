@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-title: "Boldonse", sans-serif;
+  --font-body: "Geist", sans-serif;
+
+  --color-blue: #0000ff;
+  --color-white: #fdfdff;
+  --color-orange: #e37500;
+  --color-ink: #00011e;
+  --color-navy: #040449;
+  --color-beige: #fffcf8;
+  --color-lavender: #efefff;
+  --color-powder-blue: #ccf0fb;
+}
+
+@layer base {
+  body {
+    @apply font-body;
+  }
+}
+
+@utility text-huge {
+  @apply font-title text-[64px];
+}
+
+@utility text-huge--lg {
+  @apply font-title text-[96px];
+}
+
+@utility text-body {
+  @apply font-body text-[14px];
+}
+
+@utility text-body--lg {
+  @apply font-body text-[24px];
+}
+
+@utility btn {
+  @apply flex justify-center items-center gap-1.5 py-2 px-4 rounded-sm text-[12px] border transition-all duration-500 ease-in-out;
+}
+
+@utility btn--lg {
+  @apply btn gap-2! px-5! text-[16px]!;
+}
+
+@utility btn-1 {
+  @apply bg-blue border-blue text-white hover:bg-lavender hover:text-blue;
+}
+
+@utility btn-2 {
+  @apply bg-orange border-orange text-white hover:bg-beige hover:text-orange;
+}
+
+@utility link-huge {
+  @apply font-title text-[40px] transition-all duration-500 ease-in-out hover:text-orange;
+}
+
+@utility panel {
+  @apply fixed inset-0 m-0 h-dvh w-screen max-h-none max-w-none overflow-hidden border-0 bg-beige/40 p-8 text-ink backdrop-blur-[121px] lg:p-20;
+}
+
+@layer components {
+  dialog.panel::backdrop {
+    background-color: transparent;
+  }
+}
+
+@utility badge {
+  @apply flex gap-1 py-2 px-4 rounded-full text-[12px] font-semibold border;
+}
+
+@utility badge--lg {
+  @apply badge gap-2! py-3! px-6! text-[16px]!;
+}
+
+@utility badge-1 {
+  @apply bg-lavender border-powder-blue text-blue;
+}
